@@ -551,7 +551,7 @@ flowchart TD
           <div><p>1. 在电脑上安装 Ollama，下载模型：</p><div class="cmd"><pre>ollama pull qwen2.5:7b</pre><button type="button" data-copy>复制</button></div></div>
           <div><p>2. 网页「安全助手」页把"本地地址"改成 <code>http://电脑的局域网IP:11434/v1</code>，保存，点「测试本地」。</p></div>
         </div>
-        <div class="note"><b>隐私：</b>默认<b>不会</b>把事件截图发给远程 API，只发文字描述。需要的话在页面上勾选"允许把抓拍图发给远程 API"。助手引用的安全手册在 <code>knowledge/实验室安全手册.md</code>，每个"## 标题"是一条，可以按学校的实验室制度修改。</div>
+        <div class="note"><b>隐私：</b>默认<b>不会</b>把事件截图发给远程 API，只发文字描述。需要的话在页面上勾选"允许把抓拍图发给远程 API"。助手引用的安全手册在 <code>labguard/knowledge/实验室安全手册.md</code>，每个"## 标题"是一条，可以按学校的实验室制度修改。</div>
       </div>
     </section>
 
@@ -561,7 +561,7 @@ flowchart TD
       <div class="sb">
         <p>先安装 Python 3.10–3.12（安装时勾选 "Add Python to PATH"）。</p>
         <div class="steps">
-          <div><p><b>第 1 步</b>　打开终端，进入源码文件夹</p><div class="cmd"><pre>cd 02_源码与可执行程序</pre><button type="button" data-copy>复制</button></div></div>
+          <div><p><b>第 1 步</b>　打开终端，进入源码文件夹</p><div class="cmd"><pre>cd labguard</pre><button type="button" data-copy>复制</button></div></div>
           <div><p><b>第 2 步</b>　安装依赖（只需要做一次）</p><div class="cmd"><pre>pip install -r requirements.txt</pre><button type="button" data-copy>复制</button></div></div>
           <div><p><b>第 3 步</b>　启动（电脑大窗口 + 网页大屏）</p><div class="cmd"><pre>python run_app.py</pre><button type="button" data-copy>复制</button></div>
             <p>终端会打印一行"总后台已启动……口令 XXXXXX"。浏览器打开 <code>http://127.0.0.1:8080</code>，输入这个口令。口令也保存在 <code>runtime/web_token.txt</code>。</p></div>
@@ -587,7 +587,7 @@ flowchart TD
       <div class="sh"><span class="n">12</span><h2>没有硬件时怎么演示</h2></div>
       <div class="sb">
         <ol>
-          <li>启动程序。没有摄像头时，到网页「参数」页的「画面源」选演示视频，点「播放视频」。</li>
+          <li>启动程序。没有摄像头时，到网页「参数」页的「画面源」选演示视频，点「播放视频」。演示视频放在 <code>labguard/media/</code> 或仓库根目录的 <code>local_private/</code> 里（都不会上传 GitHub）。</li>
           <li>到网页「环境控制」页右边的「演示数据」，按顺序点：
             <ul>
               <li><b>正常加热→沸腾</b>：温度从 40℃ 升到 99℃ 停住；</li>
@@ -604,7 +604,7 @@ flowchart TD
     <section id="files">
       <div class="sh"><span class="n">13</span><h2>文件夹地图</h2></div>
       <div class="sb">
-<pre class="tree">02_源码与可执行程序/
+<pre class="tree">labguard/
 ├─ run_app.py                <span class="c">启动入口</span>
 ├─ config.yaml               <span class="c">所有阈值和设置（改这里不用改代码）</span>
 ├─ models/                   <span class="c">识别模型：ppe_best.pt（人员装备）、chem_best.pt（器皿）</span>
@@ -686,6 +686,10 @@ flowchart TD
   <img id="zoomImg" alt="">
 </dialog>
 
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, securityLevel: 'loose' });
+</script>
 <script>
 (function () {
   // 截图放大
