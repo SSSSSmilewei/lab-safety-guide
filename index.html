@@ -182,7 +182,7 @@ footer { text-align: center; font-size: 13px; color: var(--muted); padding-top: 
 
 <header class="hero">
   <div class="hero-top">
-    <div class="eyebrow">湖南涉外经济学院 3 队 · 项目介绍</div>
+    <div class="eyebrow">项目介绍</div>
     <h1>基于双摄协同的<br><span>实验室安全事前干预监测系统</span></h1>
     <p class="lede">在化学实验台旁放一台 RK3588 开发板和一个 ESP32 控制盒。两个摄像头看人和台面，红外测温和烟雾传感器看热源。人离开时还在加热、烧杯即将烧干、没戴护目镜，系统<b>提前提醒</b>；真到危险时，由控制盒<b>切断加热电源</b>，恢复供电只能到现场长按控制键。</p>
     <div class="lights" aria-label="三级风险信号灯"><span class="dot g"></span>低危 · 正常守护 <span class="dot y"></span>中危 · 提醒和预警 <span class="dot r"></span>高危 · 断电锁定</div>
@@ -498,6 +498,8 @@ footer { text-align: center; font-size: 13px; color: var(--muted); padding-top: 
     <div class="tbl"><table>
       <thead><tr><th>项目</th><th>结果</th><th>测法</th></tr></thead>
       <tbody>
+        <tr><td>人员装备模型精度</td><td class="num">mAP@0.5 89.0%</td><td>YOLO11n 微调 80 轮，验证集；Precision 83.4%，Recall 87.7%</td></tr>
+        <tr><td>器皿模型精度</td><td class="num">mAP@0.5 89.3%</td><td>YOLO11n 微调 50 轮，验证集；Precision 86.7%，Recall 85.1%</td></tr>
         <tr><td>人员装备模型 NPU 推理</td><td class="num">120 ms / 帧</td><td>开发板真机，<code>tools/check_npu.py</code>，结果与 .pt 一致</td></tr>
         <tr><td>器皿模型 NPU 推理</td><td class="num">116 ms / 帧</td><td>同上</td></tr>
         <tr><td>断电指令往返</td><td class="num">4.9 ms（中位数）</td><td>ESP32-S3 真机，串口发断电到收到确认</td></tr>
@@ -559,7 +561,7 @@ python tests/test_backend.py           # 自动测试，不需要硬件</pre>
   </div>
 </section>
 
-<footer>湖南涉外经济学院 3 队 · 基于双摄协同的实验室安全事前干预监测系统 · 字体：得意黑、JetBrains Mono（SIL OFL）</footer>
+<footer>基于双摄协同的实验室安全事前干预监测系统 · 字体：得意黑、JetBrains Mono（SIL OFL）</footer>
 </main>
 </div>
 
